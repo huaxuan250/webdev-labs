@@ -1,22 +1,36 @@
 <!DOCTYPE html>
-<html lang="en" >
-<head>
-    <meta charset="UTF-8"><title>Top Restaurant</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-    <link rel="stylesheet" href="/static/style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
     <title>Top Restaurant</title>
-</head>
-<body>
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+    /> -->
+    <link rel="stylesheet" href="/static/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Top Restaurant</title>
+  </head>
+  <body>
     {% include 'includes/header.html' %}
 
     <main>
-        <p>Search location: {{city}}</p>
-        <p>Search term: {{search_term or 'None Specified'}}</p>
-        <p>Data: {{ restaurant }}</p>
-        <h2>Top Restaurant:</h2> 
-        <p>Name: {{ restaurant.get('name') }}</p>
-    </main>
-</body>
-</html>
+      <h2>Top Restaurant:</h2>
 
+      <div class="card">
+        <img src="{{restaurant.get('image_url')}}" width="200" height="200" />
+        <div class="card-text">
+          <p><strong>Name</strong>: {{ restaurant.get('name') }}</p>
+          <p><strong>Rating</strong>: {{ restaurant.get('rating') }}</p>
+          <p>
+            <strong>Location</strong>: {{ restaurant.get('display_address') }}
+          </p>
+          <p><strong>Price</strong>: {{ restaurant.get('price') }}</p>
+          <p>
+            <strong>Review Count</strong>: {{ restaurant.get('review_count') }}
+          </p>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
