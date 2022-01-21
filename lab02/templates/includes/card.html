@@ -1,0 +1,10 @@
+<div class="card">
+  <img src="{{restaurant.get('image_url')}}" width="200" height="200" />
+  <div class="card-text">
+    <p><strong>Name</strong>: {{ restaurant.get('name') }}</p>
+    <p><strong>Rating</strong>: {{ restaurant.get('rating') }}</p>
+    <p><strong>Location</strong>: {{ restaurant.get('display_address') }}</p>
+    <p><strong>Price</strong>: {{ restaurant.get('price') }}</p>
+    <p><strong>Review Count</strong>: {{ restaurant.get('review_count') }}</p>
+  </div>
+</div>
